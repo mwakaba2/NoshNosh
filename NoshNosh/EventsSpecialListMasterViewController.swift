@@ -31,7 +31,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:EventsTableCell = self.tableView.dequeueReusableCellWithIdentifier("ecell") as EventsTableCell
-        cell.locationLabel.text = eventNames[indexPath.row]
+        cell.eventName.text = eventNames[indexPath.row]
         cell.locationLabel.text = eventLocations[indexPath.row]
         cell.timeLabel.text = eventTimes[indexPath.row]
         cell.eventImg.image = eventImages[indexPath.row]

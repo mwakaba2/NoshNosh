@@ -19,7 +19,7 @@
                             <constraint firstAttribute="height" constant="200" id="qpq-hg-9dG"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Events and specials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVu-Jv-sGd">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events and specials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVu-Jv-sGd">
                         <rect key="frame" x="22" y="145" width="276" height="48"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="TrG-aN-cBq"/>
@@ -51,6 +51,7 @@
                     <constraint firstItem="06W-6y-Dpw" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leadingMargin" constant="14" id="H6l-E4-13J"/>
                     <constraint firstItem="Yhz-cV-3kW" firstAttribute="top" secondItem="06W-6y-Dpw" secondAttribute="bottom" constant="-47" id="Hd0-K3-iS0"/>
                     <constraint firstItem="06W-6y-Dpw" firstAttribute="top" secondItem="ZnX-vi-rEz" secondAttribute="bottom" constant="8" symbolic="YES" id="KLp-5c-F0m"/>
+                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="top" secondItem="LVu-Jv-sGd" secondAttribute="bottom" constant="15" id="LlJ-JZ-WYt"/>
                     <constraint firstItem="LVu-Jv-sGd" firstAttribute="top" secondItem="ZnX-vi-rEz" secondAttribute="bottom" constant="-56" id="QCw-hY-59W"/>
                     <constraint firstItem="Yhz-cV-3kW" firstAttribute="top" secondItem="vs4-cr-hwn" secondAttribute="topMargin" constant="200" id="QwC-am-hjr"/>
                     <constraint firstItem="06W-6y-Dpw" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leadingMargin" constant="14" id="RHC-kk-5yw"/>

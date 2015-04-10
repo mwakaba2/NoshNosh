@@ -25,14 +25,11 @@ class LandingPageViewController: UIViewController {
         eventsSpecialsButton.setTitle("Events and Specials", forState: .Normal)
         surpriseMeButton.setTitle("Surprise Me!", forState: .Normal)
         
-        restaurantsButton.layer.borderColor = themeColor.CGColor
-        restaurantsButton.layer.borderWidth = 1
-        drinksDishesButton.layer.borderWidth = 1
-        drinksDishesButton.layer.borderColor = themeColor.CGColor
-        eventsSpecialsButton.layer.borderWidth = 1
-        eventsSpecialsButton.layer.borderColor = themeColor.CGColor
-        surpriseMeButton.layer.borderWidth = 1
-        surpriseMeButton.layer.borderColor = themeColor.CGColor
+
+        restaurantsButton.layer.cornerRadius = 6.0
+        drinksDishesButton.layer.cornerRadius = 6.0
+        eventsSpecialsButton.layer.cornerRadius = 6.0
+        surpriseMeButton.layer.cornerRadius = 6.0
         
     }
 
