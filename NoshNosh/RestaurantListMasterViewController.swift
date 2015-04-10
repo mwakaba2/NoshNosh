@@ -9,9 +9,9 @@
 
 import UIKit
 
-class RestaurantListMasterViewController: UIViewController {
-    
-    @IBOutlet weak var restaurantBtn: UIButton!
+class RestaurantListMasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
 
     private let restaurantID = "1.json"
     let pastelGreen = UIColor(rgb: 0xC1F2DC)
@@ -19,12 +19,7 @@ class RestaurantListMasterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let imageURL = NSURL(string: "https://noshfolio.s3.amazonaws.com/images/restaurants/1-destihl/dishes/135-roasted-beet-salad.jpg")
-        let imgDATA = NSData(contentsOfURL : imageURL!)
-        let restaurantIMG = UIImage(data : imgDATA!)
-        restaurantIMG
-        
+
         let baseURL = NSURL(string:
             "https://www.noshfolio.com/restaurants/")
         
@@ -40,17 +35,16 @@ class RestaurantListMasterViewController: UIViewController {
                     let dataObject = NSData(contentsOfURL: location)
                     let restaurantDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as NSDictionary
                 
-                    
+                    println(restaurantDictionary)
                 }
                 
                 
         })
         downloadTask.resume()
         
-        restaurantBtn.setBackgroundImage(restaurantIMG, forState: .Normal)
-        restaurantBtn.imageView?.contentMode = .Center
-        restaurantBtn.layer.borderColor = pastelGreen.CGColor
-        restaurantBtn.layer.borderWidth = 5
+        //Register custom cell
+        var rnib = UINib(nibName: "restaurantTableCell", bundle:nil)
+        tableView.registerNib(rnib, forCellReuseIdentifier: "rcell")
         
     }
     
@@ -59,14 +53,24 @@ class RestaurantListMasterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return restaurantNames.count;
     }
-    */
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:RestaurantTableCell = self.tableView.dequeueReusableCellWithIdentifier("rcell") as RestaurantTableCell
+        cell.restaurantName.text = restaurantNames[indexPath.row]
+        cell.cuisineName.text = cuisineNames[indexPath.row]
+        cell.locationName.text = locationNames[indexPath.row]
+        cell.restaurantImg.image = restaurantImages[indexPath.row]
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected cell #\(indexPath.row)!")
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 275
+    }
 }
