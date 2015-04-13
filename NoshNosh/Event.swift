@@ -9,6 +9,31 @@
 import Foundation
 import UIKit
 
+
+struct Event {
+    
+    var kind: String
+    var title: String
+    var startTime: String
+    var endTime: String
+    var postDate: String
+    var imageURL: String
+    var description: String
+    var restaurant: String
+    
+    init(eventDictionary: NSDictionary){
+        kind = "asd"
+        title = "asd"
+        startTime = "asd"
+        endTime = "asd"
+        postDate = "asd"
+        imageURL  = "asd"
+        description = "asd"
+        restaurant = "asd"
+    }
+}
+
+
 var eventNames: [String] = ["Friday Dinner Specials", "Margarita Madness", "Whiskey Club at the Pig"]
 
 var eventLocations: [String] = ["Black Dog", "El Toro", "Blind Pig Company"]

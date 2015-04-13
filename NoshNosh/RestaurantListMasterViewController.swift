@@ -14,8 +14,6 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
     @IBOutlet weak var tableView: UITableView!
 
     private let restaurantID = "1.json"
-    let pastelGreen = UIColor(rgb: 0xC1F2DC)
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +31,7 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
                 
                 if (error == nil) {
                     let dataObject = NSData(contentsOfURL: location)
-                    let restaurantDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as NSDictionary
+                    let restaurantDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as! NSDictionary
                 
                     println(restaurantDictionary)
                 }
@@ -58,7 +56,7 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:RestaurantTableCell = self.tableView.dequeueReusableCellWithIdentifier("rcell") as RestaurantTableCell
+        var cell:RestaurantTableCell = self.tableView.dequeueReusableCellWithIdentifier("rcell") as! RestaurantTableCell
         cell.restaurantName.text = restaurantNames[indexPath.row]
         cell.cuisineName.text = cuisineNames[indexPath.row]
         cell.locationName.text = locationNames[indexPath.row]

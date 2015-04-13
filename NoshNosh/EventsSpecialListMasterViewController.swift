@@ -8,16 +8,31 @@
 
 import UIKit
 
+
 class EventsSpecialListMasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    var i = 0
+    var detailid = [Int]()
+    var detailCat = [String]()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        
+    
         //Register custom cell
         var dnib = UINib(nibName: "eventsTableCell", bundle:nil)
         tableView.registerNib(dnib, forCellReuseIdentifier: "ecell")
+        
+        DataManager.getTopAppsDataFromItunesWithSuccess { (iTunesData) -> Void in
+            
+            let json = JSON(data: iTunesData)
+            
+            let array = json.arrayValue
+            println(array[0])
+        }
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,12 +45,13 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:EventsTableCell = self.tableView.dequeueReusableCellWithIdentifier("ecell") as EventsTableCell
+        var cell:EventsTableCell = self.tableView.dequeueReusableCellWithIdentifier("ecell") as! EventsTableCell
         cell.eventName.text = eventNames[indexPath.row]
         cell.locationLabel.text = eventLocations[indexPath.row]
         cell.timeLabel.text = eventTimes[indexPath.row]
         cell.eventImg.image = eventImages[indexPath.row]
         return cell
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

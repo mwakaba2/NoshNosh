@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lep-G2-zRf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="lep-G2-zRf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--NoshNosh-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="LandingPageViewController" customModule="NoshNosh" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hnr-hu-bup"/>
-                        <viewControllerLayoutGuide type="bottom" id="uFG-o3-bLt"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBX-62-XME">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vBX-62-XME">
                                 <rect key="frame" x="37" y="94" width="250" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.30980392156862746" green="0.61176470588235299" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="bXs-aG-ZA9"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,12 +24,10 @@
                                     <segue destination="EGZ-sP-777" kind="push" id="eut-um-5Yg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bZ-LU-lyt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9bZ-LU-lyt">
                                 <rect key="frame" x="37" y="334" width="250" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.52941176469999995" green="0.84313725490000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="hUj-FR-db1"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,23 +37,9 @@
                                     <segue destination="Z6j-J7-B8D" kind="push" id="WTd-Gg-GUL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ns-vz-Fcv">
-                                <rect key="frame" x="37" y="216" width="250" height="80"/>
-                                <color key="backgroundColor" red="0.89019607840000003" green="0.59607843140000005" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="mfk-bk-q0C"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="JBI-Xz-li7" kind="push" id="QCk-u5-Rcf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLQ-ke-iLI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eLQ-ke-iLI">
                                 <rect key="frame" x="37" y="451" width="250" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.58039215686274515" green="0.46274509803921571" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Button">
@@ -73,23 +50,21 @@
                                     <segue destination="tdg-ap-eGC" kind="push" id="eZY-QC-UmA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Ns-vz-Fcv">
+                                <rect key="frame" x="37" y="216" width="250" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.59607843140000005" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="JBI-Xz-li7" kind="push" id="QCk-u5-Rcf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9Ns-vz-Fcv" firstAttribute="leading" secondItem="vBX-62-XME" secondAttribute="leading" id="4Xb-ps-Cl7"/>
-                            <constraint firstItem="eLQ-ke-iLI" firstAttribute="top" secondItem="9bZ-LU-lyt" secondAttribute="bottom" constant="37" id="A8y-Zv-ma7"/>
-                            <constraint firstItem="eLQ-ke-iLI" firstAttribute="trailing" secondItem="9bZ-LU-lyt" secondAttribute="trailing" id="CtZ-Yq-gXg"/>
-                            <constraint firstItem="9Ns-vz-Fcv" firstAttribute="top" secondItem="vBX-62-XME" secondAttribute="bottom" constant="42" id="H57-uF-jyN"/>
-                            <constraint firstItem="vBX-62-XME" firstAttribute="top" secondItem="hnr-hu-bup" secondAttribute="bottom" constant="30" id="Kjk-dU-lto"/>
-                            <constraint firstItem="eLQ-ke-iLI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="Og1-d6-eZH"/>
-                            <constraint firstItem="eLQ-ke-iLI" firstAttribute="leading" secondItem="9bZ-LU-lyt" secondAttribute="leading" id="Ygo-vJ-PsE"/>
-                            <constraint firstItem="9Ns-vz-Fcv" firstAttribute="trailing" secondItem="vBX-62-XME" secondAttribute="trailing" id="dYb-16-aOO"/>
-                            <constraint firstItem="9bZ-LU-lyt" firstAttribute="leading" secondItem="9Ns-vz-Fcv" secondAttribute="leading" id="ep3-Il-JfI"/>
-                            <constraint firstItem="uFG-o3-bLt" firstAttribute="top" secondItem="eLQ-ke-iLI" secondAttribute="bottom" constant="37" id="gQC-2u-c7e"/>
-                            <constraint firstItem="9bZ-LU-lyt" firstAttribute="top" secondItem="9Ns-vz-Fcv" secondAttribute="bottom" constant="38" id="hlV-aI-M0a"/>
-                            <constraint firstItem="9bZ-LU-lyt" firstAttribute="trailing" secondItem="9Ns-vz-Fcv" secondAttribute="trailing" id="naF-1E-zLw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9bZ-LU-lyt" secondAttribute="trailing" constant="17" id="xCN-kx-wHb"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="NoshNosh" id="b5a-EN-T5F"/>
                     <connections>
@@ -107,16 +82,13 @@
         <scene sceneID="sHf-gf-EIh">
             <objects>
                 <viewController id="EGZ-sP-777" customClass="RestaurantListMasterViewController" customModule="NoshNosh" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="voX-KP-MGL"/>
-                        <viewControllerLayoutGuide type="bottom" id="Jcx-Tb-Dom"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hkq-UU-9dJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SMU-hF-HLQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SMU-hF-HLQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="EGZ-sP-777" id="zlt-H9-rSn"/>
@@ -139,20 +111,17 @@
         <scene sceneID="d5B-M6-7Y5">
             <objects>
                 <viewController id="JBI-Xz-li7" customClass="DrinksDishesListMasterViewController" customModule="NoshNosh" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Vpi-WR-Jpi"/>
-                        <viewControllerLayoutGuide type="bottom" id="pxb-fL-cpW"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="csz-m1-HeV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hLD-ak-6lk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Chw-Of-3ag">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="JBI-Xz-li7" id="Om2-r0-vJ6"/>
-                                    <outlet property="delegate" destination="JBI-Xz-li7" id="zov-CJ-OY7"/>
+                                    <outlet property="dataSource" destination="JBI-Xz-li7" id="5aG-PU-uV4"/>
+                                    <outlet property="delegate" destination="JBI-Xz-li7" id="o7W-3b-fEe"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -160,7 +129,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Drinks and Dishes" id="gLx-56-MpV"/>
                     <connections>
-                        <outlet property="tableView" destination="hLD-ak-6lk" id="Z5U-Hb-NHk"/>
+                        <outlet property="tableView" destination="Chw-Of-3ag" id="cbn-LN-Ne9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ped-hC-mFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,16 +140,13 @@
         <scene sceneID="h13-7R-Meo">
             <objects>
                 <viewController id="Z6j-J7-B8D" customClass="EventsSpecialListMasterViewController" customModule="NoshNosh" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qDO-bm-3Bm"/>
-                        <viewControllerLayoutGuide type="bottom" id="2M7-O4-4Qw"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NIe-Vb-oxa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZlF-Hn-53u">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZlF-Hn-53u">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Z6j-J7-B8D" id="0rN-73-TOH"/>
@@ -203,16 +169,13 @@
         <scene sceneID="Xcg-uW-RAi">
             <objects>
                 <viewController id="tdg-ap-eGC" customClass="SurpriseMeViewController" customModule="NoshNosh" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qif-Dx-yqI"/>
-                        <viewControllerLayoutGuide type="bottom" id="j8v-VS-idB"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zy7-fi-4Hm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-Vu-ApE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4EB-Vu-ApE">
                                 <rect key="frame" x="35" y="244" width="250" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.46274509800000002" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Surprise Me!">
@@ -222,14 +185,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="4EB-Vu-ApE" secondAttribute="trailing" constant="19" id="1ti-1h-J55"/>
-                            <constraint firstItem="4EB-Vu-ApE" firstAttribute="leading" secondItem="Zy7-fi-4Hm" secondAttribute="leadingMargin" constant="19" id="H8g-cJ-blM"/>
-                            <constraint firstItem="j8v-VS-idB" firstAttribute="top" secondItem="4EB-Vu-ApE" secondAttribute="bottom" constant="244" id="jkt-3R-FwL"/>
-                            <constraint firstAttribute="centerX" secondItem="4EB-Vu-ApE" secondAttribute="centerX" id="rT6-zQ-iHN"/>
-                            <constraint firstAttribute="centerY" secondItem="4EB-Vu-ApE" secondAttribute="centerY" id="rfi-kG-tXI"/>
-                            <constraint firstItem="4EB-Vu-ApE" firstAttribute="top" secondItem="qif-Dx-yqI" secondAttribute="bottom" constant="180" id="vpw-H6-e63"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Surprise Me " id="yXY-O0-cKp"/>
                 </viewController>

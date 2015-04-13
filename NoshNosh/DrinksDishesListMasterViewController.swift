@@ -27,7 +27,7 @@ class DrinksDishesListMasterViewController: UIViewController, UITableViewDelegat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:DrinkDishTableCell = self.tableView.dequeueReusableCellWithIdentifier("ddcell") as DrinkDishTableCell
+        var cell:DrinkDishTableCell = self.tableView.dequeueReusableCellWithIdentifier("ddcell") as! DrinkDishTableCell
         cell.nameItem.text = itemNames[indexPath.row]
         cell.restaurantName.text = itemRestaurants[indexPath.row]
         cell.imgItem.image = itemImages[indexPath.row]

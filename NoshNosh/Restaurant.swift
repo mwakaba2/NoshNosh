@@ -8,26 +8,26 @@
 
 import Foundation
 import UIKit
-struct Restaurant {
-    
-    var name: String
-    var area: String
-    //var closed: Bool
-    var cuisine: String
-    
-
-    init(restaurantDictionary:NSDictionary) {
-        let addressesArray: NSArray = restaurantDictionary["addresses"] as NSArray
-        let addressesDictionary: NSDictionary = addressesArray[0] as NSDictionary
-        
-        name = restaurantDictionary["name"] as String
-        area = addressesDictionary["city"] as String
-        //closed = restaurantDictionary["closed"] as Bool
-        cuisine = restaurantDictionary["cuisine"] as String
-
-    }
-
-}
+//struct Restaurant {
+//    
+//    var name: String
+//    var area: String
+//    //var closed: Bool
+//    var cuisine: String
+//    
+//
+//    init(restaurantDictionary:NSDictionary) {
+//        let addressesArray: NSArray = restaurantDictionary["addresses"] as NSArray
+//        let addressesDictionary: NSDictionary = addressesArray[0] as NSDictionary
+//        
+//        name = restaurantDictionary["name"] as String
+//        area = addressesDictionary["city"] as String
+//        //closed = restaurantDictionary["closed"] as Bool
+//        cuisine = restaurantDictionary["cuisine"] as String
+//
+//    }
+//
+//}
 
 var restaurantNames: [String] = ["The Cracked Truck", "Sakanaya Restaurant", "Caffe Bene"]
 

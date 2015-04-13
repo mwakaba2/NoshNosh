@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -13,42 +13,63 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="suX-pQ-92W" id="nah-VY-l3p">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="waK-05-HrX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yu-yV-ybc">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yu-yV-ybc">
                         <rect key="frame" x="16" y="232" width="249" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="nyU-k7-kMR"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish or Drink Name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVr-OO-bov">
-                        <rect key="frame" x="16" y="208" width="164" height="23"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dish or Drink Name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVr-OO-bov">
+                        <rect key="frame" x="16" y="210" width="164" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="waK-05-HrX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="202"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="Uzu-h7-lFk"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Uzu-h7-lFk"/>
+                            </mask>
+                        </variation>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="waK-05-HrX" firstAttribute="top" secondItem="nah-VY-l3p" secondAttribute="topMargin" constant="-8" id="65z-Lk-1S3"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="4yu-yV-ybc" secondAttribute="bottom" constant="14" id="9r1-9S-c7v"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4yu-yV-ybc" secondAttribute="trailing" constant="40" id="06m-v5-No0"/>
+                    <constraint firstItem="wVr-OO-bov" firstAttribute="leading" secondItem="nah-VY-l3p" secondAttribute="leadingMargin" constant="1" id="9bZ-GF-D5u"/>
                     <constraint firstItem="wVr-OO-bov" firstAttribute="top" secondItem="waK-05-HrX" secondAttribute="bottom" constant="8" id="CJi-QW-7OM"/>
-                    <constraint firstItem="wVr-OO-bov" firstAttribute="leading" secondItem="nah-VY-l3p" secondAttribute="leadingMargin" constant="8" id="OAd-Lh-baT"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="4yu-yV-ybc" secondAttribute="trailing" constant="47" id="UKQ-VG-tF2"/>
-                    <constraint firstItem="4yu-yV-ybc" firstAttribute="leading" secondItem="nah-VY-l3p" secondAttribute="leadingMargin" constant="8" id="Ua5-hP-wAp"/>
+                    <constraint firstItem="wVr-OO-bov" firstAttribute="top" secondItem="waK-05-HrX" secondAttribute="bottom" constant="8" symbolic="YES" id="EHg-tJ-4vh"/>
+                    <constraint firstItem="wVr-OO-bov" firstAttribute="centerX" secondItem="waK-05-HrX" secondAttribute="centerX" constant="-62" id="KBE-A7-gZR"/>
+                    <constraint firstItem="waK-05-HrX" firstAttribute="top" secondItem="nah-VY-l3p" secondAttribute="top" id="OOA-o3-Oym"/>
+                    <constraint firstItem="wVr-OO-bov" firstAttribute="leading" secondItem="4yu-yV-ybc" secondAttribute="leading" id="QMm-Pn-cOf"/>
+                    <constraint firstAttribute="trailing" secondItem="waK-05-HrX" secondAttribute="trailing" id="RLK-za-YpM"/>
                     <constraint firstAttribute="centerY" secondItem="waK-05-HrX" secondAttribute="centerY" constant="37.5" id="VR8-0M-G5X"/>
-                    <constraint firstItem="4yu-yV-ybc" firstAttribute="top" secondItem="wVr-OO-bov" secondAttribute="bottom" constant="1" id="cwk-oM-pb1"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="wVr-OO-bov" secondAttribute="bottom" constant="36" id="e73-un-yAX"/>
                     <constraint firstAttribute="centerX" secondItem="waK-05-HrX" secondAttribute="centerX" id="fWP-hR-yEJ"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="waK-05-HrX" secondAttribute="trailing" constant="-8" id="r88-5b-pMc"/>
+                    <constraint firstItem="4yu-yV-ybc" firstAttribute="top" secondItem="wVr-OO-bov" secondAttribute="bottom" constant="1" id="sTk-bW-2W5"/>
+                    <constraint firstItem="waK-05-HrX" firstAttribute="leading" secondItem="nah-VY-l3p" secondAttribute="leading" id="uq3-0X-ku3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4yu-yV-ybc" secondAttribute="bottom" constant="13" id="xa8-zu-soh"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="VR8-0M-G5X"/>
+                        <exclude reference="fWP-hR-yEJ"/>
+                        <exclude reference="CJi-QW-7OM"/>
+                        <exclude reference="KBE-A7-gZR"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imgItem" destination="waK-05-HrX" id="WHx-01-2DE"/>
                 <outlet property="nameItem" destination="wVr-OO-bov" id="Djc-7p-M6q"/>
                 <outlet property="restaurantName" destination="4yu-yV-ybc" id="KlU-ad-in9"/>
             </connections>
-            <point key="canvasLocation" x="505" y="396.5"/>
+            <point key="canvasLocation" x="578" y="514.5"/>
         </tableViewCell>
     </objects>
 </document>
