@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
-let TopAppURL = "http://noshfolio.com/events.json"
+let Noshfolio = "http://noshfolio.com/events.json"
 
-class DataManager {
+class DataManager: UIViewController {
     
-    class func getTopAppsDataFromItunesWithSuccess(success: ((iTunesData: NSData!) -> Void)) {
-        //1
-        loadDataFromURL(NSURL(string: TopAppURL)!, completion:{(data, error) -> Void in
-            //2
+    class func getDataFromNoshfolioWithSuccess(success: ((NoshData: NSData!) -> Void)) {
+        
+        loadDataFromURL(NSURL(string: Noshfolio)!, completion:{(data, error) -> Void in
+            
             if let urlData = data {
-                //3
-                success(iTunesData: urlData)
+                
+                success(NoshData: urlData)
             }
         })
     }
@@ -32,8 +33,9 @@ class DataManager {
                 completion(data: nil, error: responseError)
             } else if let httpResponse = response as? NSHTTPURLResponse {
                 if httpResponse.statusCode != 200 {
-                    var statusError = NSError(domain:"com.raywenderlich", code:httpResponse.statusCode, userInfo:[NSLocalizedDescriptionKey : "HTTP status code has unexpected value."])
+                    var statusError = NSError(domain:"com.wakawaka.NoshNosh", code:httpResponse.statusCode, userInfo:[NSLocalizedDescriptionKey : "HTTP status code has unexpected value."])
                     completion(data: nil, error: statusError)
+                    
                 } else {
                     completion(data: data, error: nil)
                 }

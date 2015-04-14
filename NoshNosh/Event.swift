@@ -10,30 +10,6 @@ import Foundation
 import UIKit
 
 
-struct Event {
-    
-    var kind: String
-    var title: String
-    var startTime: String
-    var endTime: String
-    var postDate: String
-    var imageURL: String
-    var description: String
-    var restaurant: String
-    
-    init(eventDictionary: NSDictionary){
-        kind = "asd"
-        title = "asd"
-        startTime = "asd"
-        endTime = "asd"
-        postDate = "asd"
-        imageURL  = "asd"
-        description = "asd"
-        restaurant = "asd"
-    }
-}
-
-
 var eventNames: [String] = ["Friday Dinner Specials", "Margarita Madness", "Whiskey Club at the Pig"]
 
 var eventLocations: [String] = ["Black Dog", "El Toro", "Blind Pig Company"]
@@ -52,8 +28,18 @@ let e3URL = NSURL(string: "https://noshfolio.s3.amazonaws.com/images/restaurants
 let e3DATA = NSData(contentsOfURL : e3URL!)
 
 
+
 var eventImages: [UIImage] = [
     UIImage(data : e1DATA!)!,
     UIImage(data : e2DATA!)!,
     UIImage(data : e3DATA!)!
 ]
+
+
+func convertImgURLToImg(img: String) -> UIImage {
+    var image: UIImage
+    let URL = NSURL(string: img)
+    let Data = NSData(contentsOfURL : URL!)
+    image = UIImage(data: Data!)!
+    return image
+}
