@@ -58,9 +58,8 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
                 self.kinds.append(kind)
                 self.descriptions.append(description)
                 self.restaurants.append(restaurant)
-                //var duration = durationStringFromTimeString(startTime, endTime)
-                //println(duration)
-                //self.hours.append(duration)
+                var duration = durationStringFromTimeString(startTime, endTime)
+                self.hours.append(duration)
                 
                 var readableDate = convertToReadableDate(date)
                 self.dates.append(readableDate)
@@ -92,7 +91,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
         cell.locationLabel.text = restaurants[indexPath.row]
         cell.kindLabel.text = kinds[indexPath.row]
         cell.dateLabel.text = dates[indexPath.row]
-        //cell.timeLabel.text = hours[indexPath.row]
+        cell.timeLabel.text = hours[indexPath.row]
         cell.eventImg.image = defaultImages[indexPath.row]
         return cell
         
