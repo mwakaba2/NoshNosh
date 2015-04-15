@@ -59,16 +59,15 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
                 self.descriptions.append(description)
                 self.restaurants.append(restaurant)
                 //var duration = durationStringFromTimeString(startTime, endTime)
+                //println(duration)
                 //self.hours.append(duration)
                 
-                //var readableDate = convertToReadableDate(date)
-                //self.dates.append(readableDate)
+                var readableDate = convertToReadableDate(date)
+                self.dates.append(readableDate)
                 
                 self.i++
             
             }
-            println(self.defaultImages.count)
-            println(self.titles.count)
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
             })
@@ -92,7 +91,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
         cell.eventName.text = titles[indexPath.row]
         cell.locationLabel.text = restaurants[indexPath.row]
         cell.kindLabel.text = kinds[indexPath.row]
-        //cell.dateLabel.text = dates[indexPath.row]
+        cell.dateLabel.text = dates[indexPath.row]
         //cell.timeLabel.text = hours[indexPath.row]
         cell.eventImg.image = defaultImages[indexPath.row]
         return cell

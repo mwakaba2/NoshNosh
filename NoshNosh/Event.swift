@@ -10,31 +10,8 @@ import Foundation
 import UIKit
 
 
-var eventNames: [String] = ["Friday Dinner Specials", "Margarita Madness", "Whiskey Club at the Pig"]
-
-var eventLocations: [String] = ["Black Dog", "El Toro", "Blind Pig Company"]
-
-var eventTimes: [String] = ["5PM - 9PM", "11AM - 10PM", "3pm - Midnight" ]
-//e 1
-let e1URL = NSURL(string: "https://noshfolio.s3.amazonaws.com/images/restaurants/79-black-dog-smoke-and-ale-house/black-dog-smoke-and-ale-house-overview-1.jpg")
-let e1DATA = NSData(contentsOfURL : e1URL!)
-
-//e 2
-let e2URL = NSURL(string: "https://noshfolio.s3.amazonaws.com/images/restaurants/47-el-toro/dishes/150-margaritas.jpg")
-let e2DATA = NSData(contentsOfURL :e2URL!)
-
-//e 3
-let e3URL = NSURL(string: "https://noshfolio.s3.amazonaws.com/images/restaurants/82-the-blind-pig-company/the-blind-pig-company-overview-4.jpg")
-let e3DATA = NSData(contentsOfURL : e3URL!)
-
-
-
-var eventImages: [UIImage] = [
-    UIImage(data : e1DATA!)!,
-    UIImage(data : e2DATA!)!,
-    UIImage(data : e3DATA!)!
-]
-
+var months: Dictionary = ["01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "August", "09": "September",
+    "10": "October", "11": "November", "12": "December"]
 
 func convertImgURLToImg(img: String) -> UIImage {
     var image: UIImage
@@ -43,3 +20,21 @@ func convertImgURLToImg(img: String) -> UIImage {
     image = UIImage(data: Data!)!
     return image
 }
+
+func convertToReadableDate(date: String) -> String {
+    var readable: String
+    var readableArray = date.componentsSeparatedByString("-")
+    var year = readableArray[0]
+    var month = months[readableArray[1]]!
+    var day = readableArray[2]
+    day = day.substringWithRange(Range<String.Index>(start: advance(day.startIndex, 0), end: advance(day.startIndex, 2)))
+    readable = "\(month) \(day), \(year)"
+    return readable
+}
+
+//func durationStringFromTimeString(startTime: String, endTime: String) -> String {
+//    var duration: String
+//    
+//
+//    return duration
+//}
