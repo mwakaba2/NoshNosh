@@ -10,7 +10,6 @@ import UIKit
 
 class RestaurantTableCell: UITableViewCell {
 
-    @IBOutlet weak var restaurantBtn: UIButton!
     @IBOutlet weak var restaurantImg: UIImageView!
     @IBOutlet weak var locationName: UILabel!
     @IBOutlet weak var cuisineName: UILabel!

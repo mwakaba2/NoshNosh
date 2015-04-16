@@ -55,18 +55,20 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
         return restaurantNames.count;
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showRestaurantDetails", sender: tableView)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:RestaurantTableCell = self.tableView.dequeueReusableCellWithIdentifier("rcell") as! RestaurantTableCell
         cell.restaurantName.text = restaurantNames[indexPath.row]
         cell.cuisineName.text = cuisineNames[indexPath.row]
         cell.locationName.text = locationNames[indexPath.row]
         cell.restaurantImg.image = restaurantImages[indexPath.row]
+        cell.selectionStyle = .None
         return cell
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
-    }
+
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 275

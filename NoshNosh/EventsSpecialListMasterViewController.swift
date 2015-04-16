@@ -72,6 +72,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
             })
            
         }
+    
         
     }
 
@@ -93,23 +94,30 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
         cell.dateLabel.text = dates[indexPath.row]
         cell.timeLabel.text = hours[indexPath.row]
         cell.eventImg.image = defaultImages[indexPath.row]
+        cell.selectionStyle = .None
         return cell
         
     }
     
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-
-    }
-    
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+        self.performSegueWithIdentifier("showEventDetails", sender: tableView)
         println("You selected cell #\(indexPath.row)!")
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 275
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showEventDetails"{
+            var eventSpecialViewController : EventSpecialViewController = segue.destinationViewController as! EventSpecialViewController
+            
+            var indexPath = self.tableView.indexPathForSelectedRow() //get index of data for selected row
+            
+            eventSpecialViewController.name = self.titles[indexPath!.row] // get data by index and pass it to second view controller
+            
+        }
     }
 
 }
