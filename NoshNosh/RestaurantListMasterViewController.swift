@@ -34,7 +34,23 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
                     let restaurantDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as! NSDictionary
                 
                     println(restaurantDictionary)
+                } else {
+                    
+                    let networkIssueController = UIAlertController(title: "Error", message: "Unable to load data. Connectivity error!", preferredStyle: .Alert)
+                    
+                    let okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    networkIssueController.addAction(okButton)
+                    
+                    let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                    networkIssueController.addAction(cancelButton)
+                    
+                    
+                    self.presentViewController(networkIssueController, animated: true, completion: nil)
+
+                    
                 }
+                
+
                 
                 
         })

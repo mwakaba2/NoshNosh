@@ -30,7 +30,7 @@ class LandingPageViewController: UIViewController {
         drinksDishesButton.layer.cornerRadius = 6.0
         eventsSpecialsButton.layer.cornerRadius = 6.0
         surpriseMeButton.layer.cornerRadius = 6.0
-        
+    
     }
 
     override func didReceiveMemoryWarning() {

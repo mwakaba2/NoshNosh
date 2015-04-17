@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//import PKHUD 
 
 class EventsSpecialListMasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -20,6 +20,10 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
     var defaultImages = [UIImage]()
     var hours = [String]()
     var dates = [String]()
+    
+    let green = UIColor(rgb: 0x87D792)
+    let red = UIColor(rgb: 0xFFA085)
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -28,6 +32,12 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
         //Register custom cell
         var dnib = UINib(nibName: "eventsTableCell", bundle:nil)
         tableView.registerNib(dnib, forCellReuseIdentifier: "ecell")
+        tableView.separatorColor = UIColor.grayColor()
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+       
+//        var contentView = HUDContentView.ProgressView()
+//        HUDController.sharedController.contentView = contentView
+//        HUDController.sharedController.show()
         
         DataManager.getDataFromNoshfolioWithSuccess { (NoshData) -> Void in
             
@@ -68,6 +78,8 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
             
             }
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+//                HUDController.sharedController.hide(animated: true)
                 self.tableView.reloadData()
             })
            
@@ -91,6 +103,12 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
         cell.eventName.text = titles[indexPath.row]
         cell.locationLabel.text = restaurants[indexPath.row]
         cell.kindLabel.text = kinds[indexPath.row]
+        if(kinds[indexPath.row]=="special"){
+            cell.kindLabel.backgroundColor = red
+        }else{
+            cell.kindLabel.backgroundColor = green
+        }
+        
         cell.dateLabel.text = dates[indexPath.row]
         cell.timeLabel.text = hours[indexPath.row]
         cell.eventImg.image = defaultImages[indexPath.row]
@@ -106,7 +124,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 275
+        return 300
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -116,6 +134,13 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
             var indexPath = self.tableView.indexPathForSelectedRow() //get index of data for selected row
             
             eventSpecialViewController.name = self.titles[indexPath!.row] // get data by index and pass it to second view controller
+            eventSpecialViewController.image = self.defaultImages[indexPath!.row]
+            eventSpecialViewController.date = self.dates[indexPath!.row]
+            eventSpecialViewController.location = self.restaurants[indexPath!.row]
+            eventSpecialViewController.duration = self.hours[indexPath!.row]
+            eventSpecialViewController.details = self.descriptions[indexPath!.row]
+            eventSpecialViewController.kind = self.kinds[indexPath!.row]
+            
             
         }
     }

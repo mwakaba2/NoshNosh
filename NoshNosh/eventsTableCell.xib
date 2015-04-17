@@ -19,7 +19,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awesome events and great specials" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVu-Jv-sGd">
                         <rect key="frame" x="22" y="172" width="276" height="57"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="57" id="H89-rS-Jty"/>
+                            <constraint firstAttribute="height" constant="57" id="Nbm-BG-EJO"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,7 +29,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhz-cV-3kW">
                         <rect key="frame" x="22" y="237" width="249" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="yyU-uP-av1"/>
+                            <constraint firstAttribute="height" constant="21" id="EBJ-MD-O09"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,32 +53,32 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06W-6y-Dpw" userLabel="Time">
-                        <rect key="frame" x="22" y="261" width="249" height="18"/>
+                        <rect key="frame" x="22" y="259" width="249" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ZnX-vi-rEz" secondAttribute="trailing" id="3sx-AZ-8Ha"/>
+                    <constraint firstAttribute="trailing" secondItem="ZnX-vi-rEz" secondAttribute="trailing" id="4jK-iJ-sAf"/>
+                    <constraint firstItem="06W-6y-Dpw" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leadingMargin" constant="14" id="5oI-xh-IM0"/>
+                    <constraint firstItem="ZnX-vi-rEz" firstAttribute="top" secondItem="1sc-TE-xW5" secondAttribute="top" id="7va-WN-OlK"/>
                     <constraint firstItem="1sc-TE-xW5" firstAttribute="top" secondItem="vs4-cr-hwn" secondAttribute="topMargin" constant="21" id="8ki-2z-YZO"/>
-                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="leading" secondItem="06W-6y-Dpw" secondAttribute="leading" id="BSq-8t-M9o"/>
-                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="leading" secondItem="LVu-Jv-sGd" secondAttribute="leading" id="C5X-G2-0hY"/>
-                    <constraint firstItem="ZnX-vi-rEz" firstAttribute="top" secondItem="1sc-TE-xW5" secondAttribute="top" id="E26-BJ-b5b"/>
-                    <constraint firstAttribute="bottom" secondItem="Yhz-cV-3kW" secondAttribute="bottom" constant="41" id="Kwa-cI-geE"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Yhz-cV-3kW" secondAttribute="trailing" constant="41" id="UbX-hN-ypG"/>
-                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="trailing" secondItem="06W-6y-Dpw" secondAttribute="trailing" id="Wdw-1h-FLa"/>
-                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="top" secondItem="ZnX-vi-rEz" secondAttribute="bottom" constant="8" symbolic="YES" id="Z32-BY-f5B"/>
-                    <constraint firstItem="ZnX-vi-rEz" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leading" id="ZdW-bG-XdW"/>
-                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="top" secondItem="LVu-Jv-sGd" secondAttribute="bottom" constant="8" symbolic="YES" id="d9Q-Au-y8F"/>
-                    <constraint firstItem="LVu-Jv-sGd" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leadingMargin" constant="14" id="dcE-pg-dyo"/>
-                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leadingMargin" constant="14" id="hv6-k7-1oS"/>
+                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="top" secondItem="ZnX-vi-rEz" secondAttribute="bottom" constant="8" symbolic="YES" id="9Sn-AA-NAj"/>
+                    <constraint firstItem="Yhz-cV-3kW" firstAttribute="top" secondItem="LVu-Jv-sGd" secondAttribute="bottom" constant="8" symbolic="YES" id="Lmq-75-aEF"/>
+                    <constraint firstItem="06W-6y-Dpw" firstAttribute="leading" secondItem="Yhz-cV-3kW" secondAttribute="leading" id="O85-3k-GBs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="06W-6y-Dpw" secondAttribute="trailing" constant="41" id="Sgc-Pc-c8r"/>
+                    <constraint firstItem="06W-6y-Dpw" firstAttribute="trailing" secondItem="Yhz-cV-3kW" secondAttribute="trailing" id="cg8-Yq-y5j"/>
+                    <constraint firstItem="LVu-Jv-sGd" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leadingMargin" constant="14" id="gMo-h0-fZB"/>
+                    <constraint firstItem="LVu-Jv-sGd" firstAttribute="leading" secondItem="Yhz-cV-3kW" secondAttribute="leading" id="hoJ-78-fXa"/>
+                    <constraint firstItem="ZnX-vi-rEz" firstAttribute="trailing" secondItem="1sc-TE-xW5" secondAttribute="trailing" id="hzw-iZ-ghF"/>
+                    <constraint firstItem="LVu-Jv-sGd" firstAttribute="centerX" secondItem="ZnX-vi-rEz" secondAttribute="centerX" id="jTI-rI-1kW"/>
                     <constraint firstItem="KuS-2Z-aeT" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leadingMargin" constant="61" id="jhL-IU-hbW"/>
-                    <constraint firstItem="LVu-Jv-sGd" firstAttribute="centerX" secondItem="ZnX-vi-rEz" secondAttribute="centerX" id="kKn-Ef-ss4"/>
-                    <constraint firstItem="06W-6y-Dpw" firstAttribute="top" secondItem="Yhz-cV-3kW" secondAttribute="bottom" constant="3" id="qnX-IM-Qty"/>
                     <constraint firstItem="1sc-TE-xW5" firstAttribute="top" secondItem="KuS-2Z-aeT" secondAttribute="bottom" id="rHF-nv-rp7"/>
                     <constraint firstItem="KuS-2Z-aeT" firstAttribute="top" secondItem="vs4-cr-hwn" secondAttribute="topMargin" id="tdK-dA-Ssr"/>
-                    <constraint firstItem="ZnX-vi-rEz" firstAttribute="trailing" secondItem="1sc-TE-xW5" secondAttribute="trailing" id="wWt-9Y-j2x"/>
+                    <constraint firstItem="ZnX-vi-rEz" firstAttribute="leading" secondItem="vs4-cr-hwn" secondAttribute="leading" id="uK2-y4-Juc"/>
+                    <constraint firstAttribute="bottom" secondItem="LVu-Jv-sGd" secondAttribute="bottom" constant="70" id="up5-O5-jWe"/>
+                    <constraint firstItem="06W-6y-Dpw" firstAttribute="top" secondItem="Yhz-cV-3kW" secondAttribute="bottom" constant="1" id="vtC-5Q-37c"/>
                     <constraint firstAttribute="trailingMargin" secondItem="KuS-2Z-aeT" secondAttribute="trailing" constant="46" id="z34-7e-hv7"/>
                 </constraints>
             </tableViewCellContentView>
@@ -90,7 +90,7 @@
                 <outlet property="locationLabel" destination="Yhz-cV-3kW" id="JSG-cT-GEm"/>
                 <outlet property="timeLabel" destination="06W-6y-Dpw" id="VY5-5J-aG8"/>
             </connections>
-            <point key="canvasLocation" x="284" y="180"/>
+            <point key="canvasLocation" x="284" y="178"/>
         </tableViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
