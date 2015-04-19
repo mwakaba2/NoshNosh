@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0ABE281AE3452A00FEBBFA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0ABE271AE3452A00FEBBFA /* CoreData.framework */; };
+		DD0ABE2B1AE3458300FEBBFA /* NoshNosh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD0ABE291AE3458300FEBBFA /* NoshNosh.xcdatamodeld */; };
+		DD0ABE2D1AE348E400FEBBFA /* RestaurantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0ABE2C1AE348E400FEBBFA /* RestaurantItem.swift */; };
 		DD39556B1ADB5A19004F4D3E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39556A1ADB5A19004F4D3E /* DataManager.swift */; };
 		DD39556F1ADB5E04004F4D3E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39556E1ADB5E04004F4D3E /* SwiftyJSON.swift */; };
 		DD3955701ADB5E04004F4D3E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39556E1ADB5E04004F4D3E /* SwiftyJSON.swift */; };
@@ -58,6 +61,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD0ABE271AE3452A00FEBBFA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DD0ABE2A1AE3458300FEBBFA /* NoshNosh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoshNosh.xcdatamodel; sourceTree = "<group>"; };
+		DD0ABE2C1AE348E400FEBBFA /* RestaurantItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantItem.swift; sourceTree = "<group>"; };
 		DD39556A1ADB5A19004F4D3E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		DD39556E1ADB5E04004F4D3E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		DD62107D1AD577CB005F9629 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0ABE281AE3452A00FEBBFA /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +117,8 @@
 		DDACE2081AD0A02000C65558 = {
 			isa = PBXGroup;
 			children = (
+				DD0ABE2C1AE348E400FEBBFA /* RestaurantItem.swift */,
+				DD0ABE271AE3452A00FEBBFA /* CoreData.framework */,
 				DDACE2131AD0A02000C65558 /* NoshNosh */,
 				DDACE2291AD0A02000C65558 /* NoshNoshTests */,
 				DDACE2121AD0A02000C65558 /* Products */,
@@ -135,6 +144,7 @@
 				DDC9D7251AD78DDA00BC47F6 /* Controller */,
 				DDACE2141AD0A02000C65558 /* Supporting Files */,
 				DDACE21D1AD0A02000C65558 /* Images.xcassets */,
+				DD0ABE291AE3458300FEBBFA /* NoshNosh.xcdatamodeld */,
 			);
 			path = NoshNosh;
 			sourceTree = "<group>";
@@ -324,7 +334,9 @@
 				DDA4DA321AD7AE5E001067D3 /* RestaurantTableCell.swift in Sources */,
 				DDACE23D1AD1105600C65558 /* SurpriseMeViewController.swift in Sources */,
 				DD97E57F1AD4F4B0007E8DAD /* UIColorConverter.swift in Sources */,
+				DD0ABE2B1AE3458300FEBBFA /* NoshNosh.xcdatamodeld in Sources */,
 				DDACE23B1AD1102E00C65558 /* EventsSpecialListMasterViewController.swift in Sources */,
+				DD0ABE2D1AE348E400FEBBFA /* RestaurantItem.swift in Sources */,
 				DDF851DC1ADF746200FB6506 /* EventSpecialViewController.swift in Sources */,
 				DD72F4851AD6465C00E8C7FE /* NavigationController.swift in Sources */,
 				DD62107E1AD577CB005F9629 /* Restaurant.swift in Sources */,
@@ -547,6 +559,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DD0ABE291AE3458300FEBBFA /* NoshNosh.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD0ABE2A1AE3458300FEBBFA /* NoshNosh.xcdatamodel */,
+			);
+			currentVersion = DD0ABE2A1AE3458300FEBBFA /* NoshNosh.xcdatamodel */;
+			path = NoshNosh.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DDACE2091AD0A02000C65558 /* Project object */;
 }

@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-let Noshfolio = "http://noshfolio.com/events.json"
+
 
 class DataManager: UIViewController {
     
-    class func getDataFromNoshfolioWithSuccess(success: ((NoshData: NSData!) -> Void)) {
+    class func getDataFromNoshfolioWithSuccess(Noshfolio: String, success: ((NoshData: NSData!) -> Void)) {
         
         loadDataFromURL(NSURL(string: Noshfolio)!, completion:{(data, error) -> Void in
             

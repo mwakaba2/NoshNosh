@@ -8,6 +8,7 @@
 
 import UIKit
 //import PKHUD 
+//Todo list cache data
 
 class EventsSpecialListMasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -28,6 +29,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url = "http://noshfolio.com/events.json"
         
         //Register custom cell
         var dnib = UINib(nibName: "eventsTableCell", bundle:nil)
@@ -39,7 +41,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
 //        HUDController.sharedController.contentView = contentView
 //        HUDController.sharedController.show()
         
-        DataManager.getDataFromNoshfolioWithSuccess { (NoshData) -> Void in
+        DataManager.getDataFromNoshfolioWithSuccess(url, success: {(NoshData)  -> Void in
             
             let json = JSON(data: NoshData)
             let array = json.arrayValue
@@ -83,7 +85,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
                 self.tableView.reloadData()
             })
            
-        }
+        })
     
         
     }

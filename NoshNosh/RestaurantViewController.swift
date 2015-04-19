@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class RestaurantViewController: UIViewController {
-
+    // Retreive the managedObjectContext from AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     @IBOutlet weak var testLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +35,6 @@ class RestaurantViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+  
+    
 }
