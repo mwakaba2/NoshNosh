@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8CB33F68-05F0-4537-9C9E-601A7D1EFCED</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>NoshNosh</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BF9E3D186BEAEC9A718A475FB9DD48997681AFF3</key>
 		<string>https://github.com/mwakaba2/NoshNosh.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>NoshNosh.xcodeproj/project.xcworkspace</string>
+	<string>NoshNosh.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BF9E3D186BEAEC9A718A475FB9DD48997681AFF3</key>
