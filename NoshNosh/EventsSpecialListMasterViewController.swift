@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PKHUD
+import CoreData
 //Todo list cache data
 
 class EventsSpecialListMasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -26,6 +26,9 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
     let red = UIColor(rgb: 0xFFA085)
     
     @IBOutlet weak var tableView: UITableView!
+    var eventSpecItems = [EventSpecItem]()
+    // Retreive the managedObjectContext from AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,54 +42,31 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
        
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
-
-        DataManager.getDataFromNoshfolioWithSuccess(url, success: {(NoshData)  -> Void in
-            
-            let json = JSON(data: NoshData)
-            let array = json.arrayValue
-            
-            for Dict in array{
-                var title : String = array[self.i]["title"].stringValue
-                var kind : String = array[self.i]["kind"].stringValue
-                var description : String = array[self.i]["description"].stringValue
-                var restaurant : String = array[self.i]["eventable"]["name"].stringValue
-                if(array[self.i]["eventable"]["events_image"]["url"] == "/images/fallback/default.png"){
-                    var imageURL : String = array[self.i]["eventable"]["images"][0]["url"].stringValue
-                    var image = convertImgURLToImg(imageURL)
-                    self.defaultImages.append(image)
-                    self.imageURLs.append(imageURL)
-                } else  {
-                    var imageURL : String = array[self.i]["eventable"]["events_image"]["url"].stringValue
-                    var image = convertImgURLToImg(imageURL)
-                    self.defaultImages.append(image)
-                    self.imageURLs.append(imageURL)
-                }
-                var startTime : String = array[self.i]["start_time"].stringValue
-                var endTime: String = array[self.i]["end_time"].stringValue
-                var date: String = array[self.i]["post_time"].stringValue
-                
-                self.titles.append(title)
-                self.kinds.append(kind)
-                self.descriptions.append(description)
-                self.restaurants.append(restaurant)
-                var duration = durationStringFromTimeString(startTime, endTime)
-                self.hours.append(duration)
-                
-                var readableDate = convertToReadableDate(date)
-                self.dates.append(readableDate)
-                
-                self.i++
-            
-            }
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-                PKHUD.sharedHUD.hide(animated: true)
-                self.tableView.reloadData()
-            })
-           
-        })
-    
         
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.fetchLog()
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+            PKHUD.sharedHUD.hide(animated: true)
+            self.tableView.reloadData()
+        })
+
+        
+    }
+    
+    func fetchLog() {
+        let fetchRequest = NSFetchRequest(entityName: "EventSpecItem")
+        
+        // Create a sort descriptor object that sorts on the "title"
+        // property of the Core Data object
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        
+        // Set the list of sort descriptors in the fetch request,
+        // so it includes the sort descriptor
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [EventSpecItem] {
+            eventSpecItems = fetchResults
+        }
     }
 
     
@@ -96,23 +76,26 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count;
+        return eventSpecItems.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:EventsTableCell = self.tableView.dequeueReusableCellWithIdentifier("ecell") as! EventsTableCell
-        cell.eventName.text = titles[indexPath.row]
-        cell.locationLabel.text = restaurants[indexPath.row]
-        cell.kindLabel.text = kinds[indexPath.row]
-        if(kinds[indexPath.row]=="special"){
+        let eventSpecItem = eventSpecItems[indexPath.row]
+
+        cell.eventName.text = eventSpecItem.title
+        cell.locationLabel.text = eventSpecItem.location
+        cell.kindLabel.text = eventSpecItem.kind
+        if(eventSpecItem.kind == "special"){
             cell.kindLabel.backgroundColor = red
         }else{
             cell.kindLabel.backgroundColor = green
         }
-        
-        cell.dateLabel.text = dates[indexPath.row]
-        cell.timeLabel.text = hours[indexPath.row]
-        cell.eventImg.image = defaultImages[indexPath.row]
+
+        cell.dateLabel.text = eventSpecItem.date
+        cell.timeLabel.text = eventSpecItem.time
+        let img : UIImage = convertImgURLToImg(eventSpecItem.imgURL)
+        cell.eventImg.image = img
         cell.selectionStyle = .None
         return cell
         
@@ -133,16 +116,15 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
             var eventSpecialViewController : EventSpecialViewController = segue.destinationViewController as! EventSpecialViewController
             
             var indexPath = self.tableView.indexPathForSelectedRow() //get index of data for selected row
-            
-            eventSpecialViewController.name = self.titles[indexPath!.row] // get data by index and pass it to second view controller
-            eventSpecialViewController.image = self.defaultImages[indexPath!.row]
-            eventSpecialViewController.date = self.dates[indexPath!.row]
-            eventSpecialViewController.location = self.restaurants[indexPath!.row]
-            eventSpecialViewController.duration = self.hours[indexPath!.row]
-            eventSpecialViewController.details = self.descriptions[indexPath!.row]
-            eventSpecialViewController.kind = self.kinds[indexPath!.row]
-            
-            
+            let eventSpecItem = eventSpecItems[indexPath!.row]
+
+            eventSpecialViewController.name = eventSpecItem.title// get data by index and pass it to second view controller
+            eventSpecialViewController.image = convertImgURLToImg(eventSpecItem.imgURL)
+            eventSpecialViewController.date = eventSpecItem.date
+            eventSpecialViewController.location = eventSpecItem.location
+            eventSpecialViewController.duration = eventSpecItem.time
+            eventSpecialViewController.details = eventSpecItem.details
+            eventSpecialViewController.kind = eventSpecItem.kind
         }
     }
 

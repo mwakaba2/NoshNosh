@@ -9,8 +9,10 @@
 import Foundation
 import CoreData
 
-class RestaurantItem: NSManagedObject {
 
+
+class RestaurantItem: NSManagedObject {
+    
     @NSManaged var name: String
     @NSManaged var location: String
     @NSManaged var defaultImg: String
@@ -26,5 +28,5 @@ class RestaurantItem: NSManagedObject {
         
         return newItem
     }
-
+    
 }
