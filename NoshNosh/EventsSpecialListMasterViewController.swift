@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import PKHUD 
+import PKHUD
 //Todo list cache data
 
 class EventsSpecialListMasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -37,10 +37,9 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
         tableView.separatorColor = UIColor.grayColor()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
        
-//        var contentView = HUDContentView.ProgressView()
-//        HUDController.sharedController.contentView = contentView
-//        HUDController.sharedController.show()
-        
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+
         DataManager.getDataFromNoshfolioWithSuccess(url, success: {(NoshData)  -> Void in
             
             let json = JSON(data: NoshData)
@@ -81,7 +80,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
             }
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-//                HUDController.sharedController.hide(animated: true)
+                PKHUD.sharedHUD.hide(animated: true)
                 self.tableView.reloadData()
             })
            

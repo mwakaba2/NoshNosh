@@ -12,10 +12,7 @@ import CoreData
 //TODO download all the data in the first landing page
 
 class LandingPageViewController: UIViewController {
-
     
-    var i = 0
-    var rItems = [(String, String, String, String)]()
     @IBOutlet weak var restaurantsButton: UIButton!
     @IBOutlet weak var drinksDishesButton: UIButton!
     @IBOutlet weak var eventsSpecialsButton: UIButton!
@@ -25,21 +22,29 @@ class LandingPageViewController: UIViewController {
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     let restaurantURL = "http://noshfolio.com/restaurants/1.json"
+    let eventsURL = "http://noshfolio.com/events.json"
+    var i = 0
+    var j = 0
+    var k = 0
+    var rItems = [(String, String, String, String)]()
+    //var eItems = [(]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //network call to Restaurants
         DataManager.getDataFromNoshfolioWithSuccess(restaurantURL, success: {(NoshData)  -> Void in
             
             let json = JSON(data: NoshData)
             let dict = json.dictionaryValue
             let addresses = dict["addresses"]!.arrayValue
 
-            println(dict)
             var name : String = dict["name"]!.stringValue
             var cuisine : String = dict["cuisine"]!.stringValue
             var location : String = addresses[0]["city"].stringValue
             var imgURL : String = dict["events_image"]!["url"].stringValue
+            //TODO WHEN API IS READY
 //            dict["addresses"]
             
 //            let array = json.arrayValue
@@ -72,8 +77,7 @@ class LandingPageViewController: UIViewController {
         drinksDishesButton.setTitle("Drinks and Dishes", forState: .Normal)
         eventsSpecialsButton.setTitle("Events and Specials", forState: .Normal)
         surpriseMeButton.setTitle("Surprise Me!", forState: .Normal)
-        
-
+    
         restaurantsButton.layer.cornerRadius = 6.0
         drinksDishesButton.layer.cornerRadius = 6.0
         eventsSpecialsButton.layer.cornerRadius = 6.0
