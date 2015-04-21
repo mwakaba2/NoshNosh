@@ -13,11 +13,6 @@ import CoreData
 
 class LandingPageViewController: UIViewController {
     
-    @IBOutlet weak var restaurantsButton: UIButton!
-    @IBOutlet weak var drinksDishesButton: UIButton!
-    @IBOutlet weak var eventsSpecialsButton: UIButton!
-    @IBOutlet weak var surpriseMeButton: UIButton!
-    
     let themeColor = UIColor(rgb: 0x4f9cd9)
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -31,7 +26,8 @@ class LandingPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+    
         PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Downloading NoshData...")
         PKHUD.sharedHUD.show()
         
@@ -113,23 +109,9 @@ class LandingPageViewController: UIViewController {
                         title: itemTitle, time: itemTime, location: itemLocation,  kind: itemKind, imgURL: itemImageURL, details: itemDetails, date: itemDate)
                 }
             }
-            PKHUD.sharedHUD.hide(animated: true)
+            PKHUD.sharedHUD.hide(animated: false)
             
         })
-        
-       
-        
-        
-        restaurantsButton.setTitle("Restaurants", forState: .Normal)
-        drinksDishesButton.setTitle("Drinks and Dishes", forState: .Normal)
-        eventsSpecialsButton.setTitle("Events and Specials", forState: .Normal)
-        surpriseMeButton.setTitle("Surprise Me!", forState: .Normal)
-    
-        restaurantsButton.layer.cornerRadius = 6.0
-        drinksDishesButton.layer.cornerRadius = 6.0
-        eventsSpecialsButton.layer.cornerRadius = 6.0
-        surpriseMeButton.layer.cornerRadius = 6.0
-        
         
     }
 
@@ -137,7 +119,6 @@ class LandingPageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
