@@ -24,13 +24,14 @@ class LandingPageViewController: UIViewController {
     var rItems = [(String, String, String, String)]()
     var eItems = [(String, String, String, String,String, String, String)]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     
         PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Downloading NoshData...")
         PKHUD.sharedHUD.show()
-        
+
         //network call to Restaurants
         DataManager.getDataFromNoshfolioWithSuccess(restaurantURL, success: {(NoshData)  -> Void in
             
