@@ -13,6 +13,8 @@
 		DD39556B1ADB5A19004F4D3E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39556A1ADB5A19004F4D3E /* DataManager.swift */; };
 		DD39556F1ADB5E04004F4D3E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39556E1ADB5E04004F4D3E /* SwiftyJSON.swift */; };
 		DD3955701ADB5E04004F4D3E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39556E1ADB5E04004F4D3E /* SwiftyJSON.swift */; };
+		DD4AE9B71AE85BE200CEEF43 /* moreEventsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4AE9B61AE85BE200CEEF43 /* moreEventsTableCell.xib */; };
+		DD4AE9B91AE85C1900CEEF43 /* MoreEventsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4AE9B81AE85C1900CEEF43 /* MoreEventsTableCell.swift */; };
 		DD50A2041AE4791300DBA06A /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD50A1F91AE4791200DBA06A /* PKHUD.swift */; };
 		DD50A2051AE4791300DBA06A /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD50A1FA1AE4791200DBA06A /* PKHUDAssets.swift */; };
 		DD50A2061AE4791300DBA06A /* PKHUDContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD50A1FB1AE4791200DBA06A /* PKHUDContentView.swift */; };
@@ -75,6 +77,8 @@
 		DD0ABE2C1AE348E400FEBBFA /* RestaurantItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantItem.swift; sourceTree = "<group>"; };
 		DD39556A1ADB5A19004F4D3E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		DD39556E1ADB5E04004F4D3E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		DD4AE9B61AE85BE200CEEF43 /* moreEventsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = moreEventsTableCell.xib; sourceTree = "<group>"; };
+		DD4AE9B81AE85C1900CEEF43 /* MoreEventsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreEventsTableCell.swift; sourceTree = "<group>"; };
 		DD50A1F81AE4791200DBA06A /* PKHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKHUD.h; sourceTree = "<group>"; };
 		DD50A1F91AE4791200DBA06A /* PKHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUD.swift; sourceTree = "<group>"; };
 		DD50A1FA1AE4791200DBA06A /* PKHUDAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAssets.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				DDC9D7291AD78E8F00BC47F6 /* drinkDishTableCell.xib */,
 				DDC9D72F1AD79DE300BC47F6 /* restaurantTableCell.xib */,
 				DDA4DA351AD7C3B0001067D3 /* eventsTableCell.xib */,
+				DD4AE9B61AE85BE200CEEF43 /* moreEventsTableCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				DDA4DA331AD7C36F001067D3 /* EventsTableCell.swift */,
 				DDA4DA371AD7C800001067D3 /* Event.swift */,
 				DD39556A1ADB5A19004F4D3E /* DataManager.swift */,
+				DD4AE9B81AE85C1900CEEF43 /* MoreEventsTableCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				DD50A20B1AE4791300DBA06A /* Info.plist in Resources */,
 				DDACE21C1AD0A02000C65558 /* Main.storyboard in Resources */,
 				DDC9D72A1AD78E8F00BC47F6 /* drinkDishTableCell.xib in Resources */,
+				DD4AE9B71AE85BE200CEEF43 /* moreEventsTableCell.xib in Resources */,
 				DD50A20A1AE4791300DBA06A /* Images.xcassets in Resources */,
 				DDC9D7301AD79DE300BC47F6 /* restaurantTableCell.xib in Resources */,
 				DDA4DA361AD7C3B0001067D3 /* eventsTableCell.xib in Resources */,
@@ -395,6 +402,7 @@
 				DDACE23D1AD1105600C65558 /* SurpriseMeViewController.swift in Sources */,
 				DD97E57F1AD4F4B0007E8DAD /* UIColorConverter.swift in Sources */,
 				DD0ABE2B1AE3458300FEBBFA /* NoshNosh.xcdatamodeld in Sources */,
+				DD4AE9B91AE85C1900CEEF43 /* MoreEventsTableCell.swift in Sources */,
 				DDACE23B1AD1102E00C65558 /* EventsSpecialListMasterViewController.swift in Sources */,
 				DD0ABE2D1AE348E400FEBBFA /* RestaurantItem.swift in Sources */,
 				DDF851DC1ADF746200FB6506 /* EventSpecialViewController.swift in Sources */,

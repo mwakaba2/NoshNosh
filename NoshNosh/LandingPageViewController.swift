@@ -22,7 +22,7 @@ class LandingPageViewController: UIViewController {
     var j = 0
     var k = 0
     var rItems = [(String, String, String, String)]()
-    var eItems = [(String, String, String, String,String, String, String)]()
+    var eItems = [(String, String, String, String,String, String, String, String)]()
     
     
     override func viewDidLoad() {
@@ -95,19 +95,20 @@ class LandingPageViewController: UIViewController {
                 var date: String = array[self.j]["post_time"].stringValue
                 var duration = durationStringFromTimeString(startTime, endTime)
                 var readableDate = convertToReadableDate(date)
+                var id : String = array[self.j]["eventable"]["id"].stringValue
 
                 
                 self.j++
-                self.eItems.append(( title, duration, restaurant, kind, imageURL, description, readableDate))
+                self.eItems.append(( title, duration, restaurant, kind, imageURL, description, readableDate, id))
                 
             }
             if let moc = self.managedObjectContext {
                 
                 // Loop through, creating items
-                for (itemTitle ,itemTime, itemLocation, itemKind, itemImageURL, itemDetails, itemDate) in self.eItems {
+                for (itemTitle ,itemTime, itemLocation, itemKind, itemImageURL, itemDetails, itemDate, itemID) in self.eItems {
                     // Create an individual item
                     EventSpecItem.createInManagedObjectContext(moc,
-                        title: itemTitle, time: itemTime, location: itemLocation,  kind: itemKind, imgURL: itemImageURL, details: itemDetails, date: itemDate)
+                        title: itemTitle, time: itemTime, location: itemLocation,  kind: itemKind, imgURL: itemImageURL, details: itemDetails, date: itemDate, restaurantID: itemID)
                 }
             }
             PKHUD.sharedHUD.hide(animated: false)

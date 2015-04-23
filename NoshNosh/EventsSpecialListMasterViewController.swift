@@ -11,25 +11,15 @@ import CoreData
 //Todo list cache data
 
 class EventsSpecialListMasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
-    var i = 0
-    var titles = [String]()
-    var kinds = [String]()
-    var descriptions = [String]()
-    var restaurants = [String]()
-    var imageURLs = [String]()
-    var defaultImages = [UIImage]()
-    var hours = [String]()
-    var dates = [String]()
     
     let green = UIColor(rgb: 0x87D792)
     let red = UIColor(rgb: 0xFFA085)
     
-    @IBOutlet weak var tableView: UITableView!
     var eventSpecItems = [EventSpecItem]()
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = "http://noshfolio.com/events.json"
@@ -118,14 +108,16 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
             var indexPath = self.tableView.indexPathForSelectedRow() //get index of data for selected row
             let eventSpecItem = eventSpecItems[indexPath!.row]
 
-            eventSpecialViewController.name = eventSpecItem.title// get data by index and pass it to second view controller
+            eventSpecialViewController.name = eventSpecItem.title // get data by index and pass it to second view controller
             eventSpecialViewController.image = convertImgURLToImg(eventSpecItem.imgURL)
             eventSpecialViewController.date = eventSpecItem.date
             eventSpecialViewController.location = eventSpecItem.location
             eventSpecialViewController.duration = eventSpecItem.time
             eventSpecialViewController.details = eventSpecItem.details
             eventSpecialViewController.kind = eventSpecItem.kind
+            eventSpecialViewController.restaurantId = eventSpecItem.restaurantID
         }
+        
     }
 
 }

@@ -20,8 +20,9 @@ class EventSpecItem: NSManagedObject {
     @NSManaged var imgURL: String
     @NSManaged var details: String
     @NSManaged var date: String
+    @NSManaged var restaurantID: String
     
-    class func createInManagedObjectContext(moc: NSManagedObjectContext, title: String, time: String, location: String, kind: String, imgURL: String, details: String, date: String) -> EventSpecItem {
+    class func createInManagedObjectContext(moc: NSManagedObjectContext, title: String, time: String, location: String, kind: String, imgURL: String, details: String, date: String, restaurantID: String) -> EventSpecItem {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("EventSpecItem", inManagedObjectContext: moc) as! EventSpecItem
         newItem.title = title
         newItem.time = time
@@ -30,6 +31,7 @@ class EventSpecItem: NSManagedObject {
         newItem.imgURL =  imgURL
         newItem.details = details
         newItem.date = date
+        newItem.restaurantID = restaurantID
         
         return newItem
     }
