@@ -11,12 +11,23 @@ import CoreData
 
 class RestaurantViewController: UIViewController {
     // Retreive the managedObjectContext from AppDelegate
+    
+    var item : RestaurantItem?
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var defaultImg: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var cuisineLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let item = self.item
+        self.defaultImg.image = convertImgURLToImg(item!.defaultImg)
+        self.nameLabel.text = item?.name
+        self.locationLabel.text  = item?.location
+        self.detailsLabel.text  = item?.details
+        self.cuisineLabel.text  = item?.cuisine
         // Do any additional setup after loading the view.
     }
 
@@ -24,17 +35,6 @@ class RestaurantViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-  
     
 }

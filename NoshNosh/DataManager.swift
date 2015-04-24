@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 
+//IMPORTANT API CALLS
+// list of restaurants: /restaurants/show_n.json (default: 10 restaurants)
+// restaurants/show_n.json?count=1
+// featured items image /owners_recommendations/id/default_image_url.json
+// surprise me /owners_recommendations/show_n.json
+// restaurants/id/default_image_url.json 
+// restaurants/id/am_i_open.json
+// events/id/default_image_url.json
+
 
 
 class DataManager: UIViewController {

@@ -13,16 +13,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YtD-Ia-kZz" id="MhI-yg-ciQ">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRr-fh-77b">
-                        <rect key="frame" x="18" y="240" width="249" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="hhM-tD-v2x"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuisine Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqY-gJ-Hs9">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cuisine Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqY-gJ-Hs9">
                         <rect key="frame" x="18" y="211" width="249" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,27 +26,41 @@
                             <constraint firstAttribute="height" constant="201" id="GpC-3w-pxF"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OPEN NOW!" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O08-Bq-dwV">
+                        <rect key="frame" x="0.0" y="0.0" width="144" height="47"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.4596765142" green="0.87849195079999998" blue="0.47800017950000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-pp-92Z">
                         <rect key="frame" x="18" y="167" width="142" height="22"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRr-fh-77b" userLabel="Location">
+                        <rect key="frame" x="18" y="240" width="294" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="b0S-As-quQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="XRr-fh-77b" firstAttribute="leading" secondItem="MhI-yg-ciQ" secondAttribute="leadingMargin" constant="10" id="6fg-WZ-g36"/>
+                    <constraint firstItem="XRr-fh-77b" firstAttribute="top" secondItem="DqY-gJ-Hs9" secondAttribute="bottom" constant="8" symbolic="YES" id="7PX-72-wID"/>
                     <constraint firstItem="f6A-pp-92Z" firstAttribute="leading" secondItem="MhI-yg-ciQ" secondAttribute="leadingMargin" constant="10" id="AoP-ND-ynA"/>
-                    <constraint firstItem="XRr-fh-77b" firstAttribute="trailing" secondItem="DqY-gJ-Hs9" secondAttribute="trailing" id="B7q-fP-Gif"/>
                     <constraint firstItem="DqY-gJ-Hs9" firstAttribute="top" secondItem="f6A-pp-92Z" secondAttribute="bottom" constant="22" id="G3e-4R-Bl1"/>
+                    <constraint firstItem="XRr-fh-77b" firstAttribute="leading" secondItem="DqY-gJ-Hs9" secondAttribute="leading" id="GcG-Qt-Pph"/>
                     <constraint firstAttribute="trailing" secondItem="n4A-Cd-up7" secondAttribute="trailing" id="H6X-Fq-qsT"/>
-                    <constraint firstItem="XRr-fh-77b" firstAttribute="leading" secondItem="DqY-gJ-Hs9" secondAttribute="leading" id="IBz-qD-euZ"/>
                     <constraint firstItem="n4A-Cd-up7" firstAttribute="top" secondItem="MhI-yg-ciQ" secondAttribute="top" id="LBA-9g-sTp"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="XRr-fh-77b" secondAttribute="bottom" constant="5" id="LiS-OM-gL5"/>
                     <constraint firstItem="f6A-pp-92Z" firstAttribute="leading" secondItem="DqY-gJ-Hs9" secondAttribute="leading" id="N8F-hR-YwS"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="XRr-fh-77b" secondAttribute="trailing" constant="45" id="VZ5-4o-873"/>
-                    <constraint firstItem="XRr-fh-77b" firstAttribute="top" secondItem="DqY-gJ-Hs9" secondAttribute="bottom" constant="8" symbolic="YES" id="jzP-lT-YzY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="XRr-fh-77b" secondAttribute="bottom" constant="5" id="Ojx-dl-eHj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="XRr-fh-77b" secondAttribute="trailing" id="iJ7-3m-fTV"/>
                     <constraint firstItem="n4A-Cd-up7" firstAttribute="leading" secondItem="MhI-yg-ciQ" secondAttribute="leading" id="kld-lL-agq"/>
                     <constraint firstItem="DqY-gJ-Hs9" firstAttribute="top" secondItem="n4A-Cd-up7" secondAttribute="bottom" constant="10" id="pan-e3-f0h"/>
+                    <constraint firstItem="XRr-fh-77b" firstAttribute="leading" secondItem="MhI-yg-ciQ" secondAttribute="leadingMargin" constant="10" id="q5Y-0h-lmK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

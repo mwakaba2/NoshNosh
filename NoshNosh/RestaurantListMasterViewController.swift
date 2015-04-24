@@ -30,7 +30,7 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
         
         // Create a sort descriptor object that sorts on the "title"
         // property of the Core Data object
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "priority", ascending: true)
         
         // Set the list of sort descriptors in the fetch request,
         // so it includes the sort descriptor
@@ -61,7 +61,8 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
         cell.restaurantName.text = restaurantItem.name
         cell.cuisineName.text = restaurantItem.cuisine
         cell.locationName.text = restaurantItem.location
-        cell.restaurantImg.image = restaurantImages[indexPath.row]
+        let img : UIImage = convertImgURLToImg(restaurantItem.defaultImg)
+        cell.restaurantImg.image = img
         cell.selectionStyle = .None
         return cell
     }
@@ -69,5 +70,15 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 275
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRestaurantDetails"{
+            var restaurantViewController : RestaurantViewController = segue.destinationViewController as! RestaurantViewController
+            
+            var indexPath = self.tableView.indexPathForSelectedRow() //get index of data for selected row
+            restaurantViewController.item = restaurantItems[indexPath!.row]
+        }
     }
 }
