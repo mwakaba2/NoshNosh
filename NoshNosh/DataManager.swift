@@ -16,7 +16,7 @@ import UIKit
 // surprise me /owners_recommendations/show_n.json
 // restaurants/id/default_image_url.json 
 // restaurants/id/am_i_open.json
-// events/id/default_image_url.json
+// events/id/default_image_url.json check!
 
 
 
@@ -33,6 +33,12 @@ class DataManager: UIViewController {
         })
     }
     
+    class func getJSONObject(Noshfolio: String) -> NSData! {
+        var endpoint = NSURL(string: Noshfolio)!
+        var data = NSData(contentsOfURL: endpoint)
+        return data
+    }
+    
     class func loadDataFromURL(url: NSURL, completion:(data: NSData?, error: NSError?) -> Void) {
         var session = NSURLSession.sharedSession()
         
@@ -44,6 +50,7 @@ class DataManager: UIViewController {
                 if httpResponse.statusCode != 200 {
                     var statusError = NSError(domain:"com.wakawaka.NoshNosh", code:httpResponse.statusCode, userInfo:[NSLocalizedDescriptionKey : "HTTP status code has unexpected value."])
                     completion(data: nil, error: statusError)
+                    println("error")
                     
                 } else {
                     completion(data: data, error: nil)

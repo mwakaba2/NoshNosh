@@ -112,7 +112,7 @@ class EventSpecialViewController: UIViewController, UITableViewDelegate, UITable
         
         cell.dateLabel.text = eventSpecItem.date
         cell.timeLabel.text = eventSpecItem.time
-        let img : UIImage = convertImgURLToImg(eventSpecItem.imgURL)
+        var img : UIImage = convertImgURLToImg(eventSpecItem.imgURL)
         cell.eventImg.image = img
         cell.selectionStyle = .None
         return cell

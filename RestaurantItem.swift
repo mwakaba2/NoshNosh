@@ -19,8 +19,10 @@ class RestaurantItem: NSManagedObject {
     @NSManaged var cuisine: String
     @NSManaged var details: String
     @NSManaged var priority: String
+    @NSManaged var restaurantID: String
+    @NSManaged var open: String
     
-    class func createInManagedObjectContext(moc: NSManagedObjectContext, name: String, location: String, defaultImg: String, cuisine: String, details: String, priority: String) -> RestaurantItem {
+    class func createInManagedObjectContext(moc: NSManagedObjectContext, name: String, location: String, defaultImg: String, cuisine: String, details: String, priority: String, restaurantID: String, open: String) -> RestaurantItem {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("RestaurantItem", inManagedObjectContext: moc) as! RestaurantItem
         newItem.name = name
         newItem.location = location
@@ -28,6 +30,8 @@ class RestaurantItem: NSManagedObject {
         newItem.cuisine = cuisine
         newItem.details = details
         newItem.priority = priority
+        newItem.restaurantID = restaurantID
+        newItem.open = open
         
         return newItem
     }

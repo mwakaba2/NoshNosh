@@ -21,7 +21,7 @@ class LandingPageViewController: UIViewController {
     var i = 0
     var j = 0
     var k = 0
-    var rItems = [(String, String, String, String, String, String)]()
+    var rItems = [(String, String, String, String, String, String, String, String)]()
     var eItems = [(String, String, String, String,String, String, String, String)]()
     
     
@@ -33,7 +33,6 @@ class LandingPageViewController: UIViewController {
 
         loadRestaurants()
         loadEvents()
-        
     }
     
 
@@ -42,36 +41,31 @@ class LandingPageViewController: UIViewController {
         DataManager.getDataFromNoshfolioWithSuccess(restaurantURL, success: {(NoshData)  -> Void in
             
             let json = JSON(data: NoshData)
-            //            let dict = json.dictionaryValue
-            //            let addresses = dict["addresses"]!.arrayValue
-            //
-            //            var name : String = dict["name"]!.stringValue
-            //            var cuisine : String = dict["cuisine"]!.stringValue
-            //            var location : String = addresses[0]["city"].stringValue
-            //            var imgURL : String = dict["events_image"]!["url"].stringValue
-            //TODO WHEN API IS READY
-            
             let array = json.arrayValue
             
             for Dict in array {
+                var id : String = array[self.i]["id"].stringValue
+                var openURL : String = "http://noshfolio.com/restaurants/\(id)/am_i_open.json"
+                var imgURL : String = "http://noshfolio.com/restaurants/\(id)/default_image_url.json"
+                var open : String = NSString(data: DataManager.getJSONObject(openURL), encoding: NSUTF8StringEncoding)! as String
+                var ImgURL : String = NSString(data: DataManager.getJSONObject(imgURL), encoding: NSUTF8StringEncoding)! as String
                 var name : String = array[self.i]["name"].stringValue
                 var cuisine : String = array[self.i]["cuisine"].stringValue
-                var open : Bool = true
                 var details : String = array[self.i]["teaser"].stringValue
                 var location : String = array[self.i]["address"].stringValue
-                var imageURL : String = array[self.i]["images"][0]["url"].stringValue
                 var priority : String = array[self.i]["owners_recommendations"][0]["restaurant_priority"].stringValue
+                
                 self.i++
-                self.rItems.append((name, location, imageURL, cuisine, details, priority))
+                self.rItems.append((name, location, ImgURL, cuisine, details, priority, id, open))
             }
             
             if let moc = self.managedObjectContext {
                 
                 // Loop through, creating items
-                for (itemName, itemLocation,itemDefaultImg, itemCuisine, itemDetails, itemPriority) in self.rItems {
+                for (itemName, itemLocation,itemDefaultImg, itemCuisine, itemDetails, itemPriority, itemRestaurantID, itemOpen) in self.rItems {
                     // Create an individual item
                     RestaurantItem.createInManagedObjectContext(moc,
-                        name: itemName, location: itemLocation, defaultImg: itemDefaultImg, cuisine: itemCuisine, details:itemDetails, priority: itemPriority)
+                        name: itemName, location: itemLocation, defaultImg: itemDefaultImg, cuisine: itemCuisine, details:itemDetails, priority: itemPriority, restaurantID: itemRestaurantID, open: itemOpen)
                 }
             }
             
@@ -90,22 +84,17 @@ class LandingPageViewController: UIViewController {
                 var kind : String = array[self.j]["kind"].stringValue
                 var description : String = array[self.j]["description"].stringValue
                 var restaurant : String = array[self.j]["eventable"]["name"].stringValue
-                var imageURL : String = array[self.j]["eventable"]["images"][0]["url"].stringValue
-                if(array[self.j]["eventable"]["events_image"]["url"] == "/images/fallback/default.png"){
-                    imageURL = array[self.j]["eventable"]["images"][0]["url"].stringValue
-                } else  {
-                    imageURL = array[self.j]["eventable"]["events_image"]["url"].stringValue
-                }
                 var startTime : String = array[self.j]["start_time"].stringValue
                 var endTime: String = array[self.j]["end_time"].stringValue
                 var date: String = array[self.j]["post_time"].stringValue
                 var duration = durationStringFromTimeString(startTime, endTime)
                 var readableDate = convertToReadableDate(date)
-                var id : String = array[self.j]["eventable"]["id"].stringValue
-                
+                var id : String = array[self.j]["id"].stringValue
+                var url : String = "http://noshfolio.com/events/\(id)/default_image_url.json"
+                var eventImage: String = NSString(data: DataManager.getJSONObject(url), encoding: NSUTF8StringEncoding)! as String
                 
                 self.j++
-                self.eItems.append(( title, duration, restaurant, kind, imageURL, description, readableDate, id))
+                self.eItems.append(( title, duration, restaurant, kind, eventImage, description, readableDate, id))
                 
             }
             if let moc = self.managedObjectContext {

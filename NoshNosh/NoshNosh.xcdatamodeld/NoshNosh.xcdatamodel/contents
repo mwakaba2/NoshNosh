@@ -17,11 +17,13 @@
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="open" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="restaurantID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="DishDrinkItem" positionX="-54" positionY="18" width="128" height="45"/>
         <element name="EventSpecItem" positionX="-36" positionY="27" width="128" height="165"/>
-        <element name="RestaurantItem" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="RestaurantItem" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

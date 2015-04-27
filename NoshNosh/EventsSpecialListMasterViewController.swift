@@ -36,7 +36,7 @@ class EventsSpecialListMasterViewController: UIViewController, UITableViewDelega
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.fetchLog()
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-            PKHUD.sharedHUD.hide(animated: true)
+            PKHUD.sharedHUD.hide(animated: false)
             self.tableView.reloadData()
         })
 
