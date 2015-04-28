@@ -15,7 +15,8 @@ class DrinkDishTableCell: UITableViewCell {
 
     @IBOutlet weak var nameItem: UILabel!
     
-    @IBOutlet weak var restaurantName: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

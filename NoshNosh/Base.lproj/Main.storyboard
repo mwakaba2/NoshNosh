@@ -260,7 +260,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JsK-Jd-FKb">
-                                <rect key="frame" x="16" y="335.00000718789573" width="285" height="79"/>
+                                <rect key="frame" x="16" y="335.00000373047925" width="285" height="79"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.089918154149999999" green="0.2366553985" blue="0.55346433080000002" alpha="0.22" colorSpace="calibratedRGB"/>
                                 <string key="text">Description about this restuarant and all the good stuff. asdlkajsdasd asdlakjdalksd  lkcjalc alksjaksdj alsdjkalsdja lksdjal d aldjalc lkasjcalkscja clakjscakl scacj laksjc alkscjalskcjalc.</string>

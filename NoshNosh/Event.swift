@@ -2,80 +2,54 @@
 //  Event.swift
 //  NoshNosh
 //
-//  Created by Mariko Wakabayashi on 4/10/15.
+//  Created by Mariko Wakabayashi on 4/27/15.
 //  Copyright (c) 2015 wakawaka. All rights reserved.
 //
 
 import Foundation
 import UIKit
-
-//TO DO: Use Swift DateTime class
-
-var months: Dictionary = ["01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "August", "09": "September",
-    "10": "October", "11": "November", "12": "December"]
+import CoreData
 
 
-func convertImgURLToImg(img: String) -> UIImage {
-    var image: UIImage?
-    let URL = NSURL(string: img)
-    let Data = NSData(contentsOfURL : URL!)
-    image = UIImage(named: "shibachan")
-    if(Data != nil){
-        image = UIImage(data: Data!)!
-    }
-    return image!
-}
+let eventsURL = "http://noshfolio.com/events.json"
+var j = 0
+var eItems = [(String, String, String, String,String, String, String, String)]()
 
 
-func convertToReadableDate(date: String) -> String {
-    var readable: String
-    var readableArray = date.componentsSeparatedByString("-")
-    var year = readableArray[0]
-    var month = months[readableArray[1]]!
-    var day = readableArray[2]
-    day = day.substringWithRange(Range<String.Index>(start: advance(day.startIndex, 0), end: advance(day.startIndex, 2)))
-    readable = "\(month) \(day), \(year)"
-    return readable
-}
 
-func durationStringFromTimeString(startTime: String, endTime: String) -> String {
-    var duration: String
-    var startArray = startTime.componentsSeparatedByString("-")
-    var startDay = startArray[2]
-    startDay = startDay.substringWithRange(Range<String.Index>(start: advance(startDay.startIndex, 3), end: advance(startDay.startIndex, 5)))
-    
-    var endArray = endTime.componentsSeparatedByString("-")
-    var endDay = endArray[2]
-    endDay = endDay.substringWithRange(Range<String.Index>(start: advance(endDay.startIndex, 3), end: advance(endDay.startIndex, 5)))
-    
-    var start = startDay.toInt()!
-    if(start > 12){
-        start = start - 12
-        startDay = String(start)+"PM"
-    } else if(start == 0) {
-        startDay = "MIDNIGHT"
-    } else{
-        if(start == 12){
-            startDay = String(start)+"PM"
-        } else {
-            startDay = String(start)+"AM"
+func loadEvents(){
+    DataManager.getDataFromNoshfolioWithSuccess(eventsURL, success: {(NoshData)  -> Void in
+        
+        let json = JSON(data: NoshData)
+        let array = json.arrayValue
+        
+        for Dict in array{
+            var title : String = array[j]["title"].stringValue
+            var kind : String = array[j]["kind"].stringValue
+            var description : String = array[j]["description"].stringValue
+            var restaurant : String = array[j]["eventable"]["name"].stringValue
+            var startTime : String = array[j]["start_time"].stringValue
+            var endTime: String = array[j]["end_time"].stringValue
+            var date: String = array[j]["post_time"].stringValue
+            var duration = durationStringFromTimeString(startTime, endTime)
+            var readableDate = convertToReadableDate(date)
+            var id : String = array[j]["id"].stringValue
+            var url : String = "http://noshfolio.com/events/\(id)/default_image_url.json"
+            var eventImage: String = NSString(data: DataManager.getJSONObject(url), encoding: NSUTF8StringEncoding)! as String
+            
+            j++
+            eItems.append(( title, duration, restaurant, kind, eventImage, description, readableDate, id))
+            
         }
-    }
-
-    var end = endDay.toInt()!
-    if(end > 12){
-        end = end - 12
-        endDay = String(end)+"PM"
-    } else if(end == 0) {
-        endDay = "MIDNIGHT"
-    } else{
-        if(end == 12){
-            endDay = String(end)+"PM"
-        } else {
-            endDay = String(end)+"AM"
+        if let moc = managedObjectContext {
+            
+            // Loop through, creating items
+            for (itemTitle ,itemTime, itemLocation, itemKind, itemImageURL, itemDetails, itemDate, itemID) in eItems {
+                // Create an individual item
+                EventSpecItem.createInManagedObjectContext(moc,
+                    title: itemTitle, time: itemTime, location: itemLocation,  kind: itemKind, imgURL: itemImageURL, details: itemDetails, date: itemDate, restaurantID: itemID)
+            }
         }
-    }
-    
-    duration = startDay + " - " + endDay
-    return duration
+        PKHUD.sharedHUD.hide(animated: false)
+    })
 }

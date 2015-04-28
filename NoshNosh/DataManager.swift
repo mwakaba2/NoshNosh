@@ -54,6 +54,7 @@ class DataManager: UIViewController {
                     
                 } else {
                     completion(data: data, error: nil)
+                    println("error FROM ELSE")
                 }
             }
         })

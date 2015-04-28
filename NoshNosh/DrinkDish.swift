@@ -8,28 +8,44 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-var itemNames: [String] = ["Strawberry Crepe", "Margarita Flights", "Banana & Walnut Honey"]
-
-var itemRestaurants: [String] = ["El Oasis", "Wedge Tequila Bar & Grill", "Caffe Bene"]
-
-//item 1
-let item1URL = NSURL(string: "https://noshfolio.s3.amazonaws.com/images/restaurants/132-el-oasis/dishes/530-strawberry-crepe.jpg")
-let item1DATA = NSData(contentsOfURL : item1URL!)
-
-//item 2
-let item2URL = NSURL(string:"https://noshfolio.s3.amazonaws.com/images/restaurants/96-wedge-tequila-bar-grill/dishes/717-margarita-flights.jpg")
-let item2DATA = NSData(contentsOfURL : item2URL!)
-
-//item 3
-let item3URL = NSURL(string: "https://noshfolio.s3.amazonaws.com/images/restaurants/174-caffe-bene/dishes/622-banana-walnut-honey-bread.jpg")
-let item3DATA = NSData(contentsOfURL : item3URL!)
+let dishesURL = "http://noshfolio.com/owners_recommendations/show_n.json"
+var k = 0
+var dItems = [(String, String, String, String, String, String, String)]()
 
 
-var itemImages: [UIImage] = [
-    UIImage(data : item1DATA!)!,
-    UIImage(data : item2DATA!)!,
-    UIImage(data : item3DATA!)!
-]
-
-
+func loadDishes(){
+    //network call to Restaurants
+    DataManager.getDataFromNoshfolioWithSuccess(dishesURL, success: {(NoshData)  -> Void in
+        
+        let json = JSON(data: NoshData)
+        let array = json.arrayValue
+        
+        for Dict in array {
+            var name : String = array[k]["name"].stringValue
+            var ddID : String = array[k]["id"].stringValue
+            var ddURL : String = "http://noshfolio.com/owners_recommendations/\(ddID)/default_image_url.json"
+            var dishURL : String = NSString(data: DataManager.getJSONObject(ddURL), encoding: NSUTF8StringEncoding)! as String
+            var price : String = array[k]["min_price"].stringValue
+            var details : String = array[k]["description"].stringValue
+            var restaurantID : String = array[k]["restaurant_id"].stringValue
+            var priority : String = array[k]["restaurant_priority"].stringValue
+            
+            k++
+            dItems.append((name, price, dishURL, ddID, details, priority, restaurantID))
+        }
+        
+        if let moc = managedObjectContext {
+            
+            // Loop through, creating items
+            for (itemName, itemPrice, itemImg, itemID, itemDetails, itemPriority, itemrestID) in dItems {
+                // Create an individual item
+                DishDrinkItem.createInManagedObjectContext(moc,
+                    name: itemName,  price: itemPrice, link: itemImg, ddID: itemID,  details: itemDetails,  restPriority: itemPriority, restID: itemrestID)
+            }
+        }
+        
+    })
+    
+}
