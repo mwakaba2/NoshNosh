@@ -15,6 +15,7 @@ class RestaurantTableCell: UITableViewCell {
     @IBOutlet weak var cuisineName: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
 
+    @IBOutlet weak var openNow: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -12,6 +12,10 @@ import CoreData
 
 class RestaurantListMasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let green = UIColor(rgb: 0x87D792)
+    let red = UIColor(rgb: 0xFFA085)
+    
+
     @IBOutlet weak var tableView: UITableView!
     var restaurantItems = [RestaurantItem]()
     // Retreive the managedObjectContext from AppDelegate
@@ -63,6 +67,13 @@ class RestaurantListMasterViewController: UIViewController, UITableViewDelegate,
         cell.locationName.text = restaurantItem.location
         let img : UIImage = convertImgURLToImg(restaurantItem.defaultImg)
         cell.restaurantImg.image = img
+        if(restaurantItem.open == "true"){
+            cell.openNow.text = "Open"
+            cell.openNow.textColor = green
+        }else{
+            cell.openNow.text = "Closed"
+            cell.openNow.textColor = red
+        }
         cell.selectionStyle = .None
         return cell
     }

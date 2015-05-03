@@ -21,11 +21,6 @@ class NavigationController: UINavigationController {
         self.navigationBar.barTintColor = themeColor
         self.navigationBar.barStyle = UIBarStyle.Black
         self.navigationBar.tintColor = UIColor.whiteColor()
-//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
-//        imageView.contentMode = .ScaleAspectFit
-//        let logo = UIImage(named: "noshfolio-medium-white")
-//        imageView.image = logo
-//        self.navigationItem.titleView = imageView
     }
 
     override func didReceiveMemoryWarning() {

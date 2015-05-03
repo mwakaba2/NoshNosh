@@ -45,6 +45,9 @@
 		DDC9D72C1AD790A200BC47F6 /* DrinkDishTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9D72B1AD790A200BC47F6 /* DrinkDishTableCell.swift */; };
 		DDC9D72E1AD7922700BC47F6 /* DrinkDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9D72D1AD7922700BC47F6 /* DrinkDish.swift */; };
 		DDC9D7301AD79DE300BC47F6 /* restaurantTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC9D72F1AD79DE300BC47F6 /* restaurantTableCell.xib */; };
+		DDCB78941AF5A45A004155C2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB78931AF5A45A004155C2 /* MapViewController.swift */; };
+		DDCB78981AF5B0A4004155C2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB78971AF5B0A4004155C2 /* LocationManager.swift */; };
+		DDD9037B1AF1DC600043D6CD /* SurpriseMeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD9037A1AF1DC600043D6CD /* SurpriseMeDetailsViewController.swift */; };
 		DDE958A61AEF216F008F60EE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE958A51AEF216F008F60EE /* Event.swift */; };
 		DDE958A91AEF4B92008F60EE /* NoshNosh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD0ABE291AE3458300FEBBFA /* NoshNosh.xcdatamodeld */; };
 		DDE958B31AEF4D99008F60EE /* DishDrinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE958B21AEF4D99008F60EE /* DishDrinkItem.swift */; };
@@ -117,6 +120,9 @@
 		DDC9D72B1AD790A200BC47F6 /* DrinkDishTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkDishTableCell.swift; sourceTree = "<group>"; };
 		DDC9D72D1AD7922700BC47F6 /* DrinkDish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkDish.swift; sourceTree = "<group>"; };
 		DDC9D72F1AD79DE300BC47F6 /* restaurantTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = restaurantTableCell.xib; sourceTree = "<group>"; };
+		DDCB78931AF5A45A004155C2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DDCB78971AF5B0A4004155C2 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = NoshNosh/LocationManager.swift; sourceTree = "<group>"; };
+		DDD9037A1AF1DC600043D6CD /* SurpriseMeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurpriseMeDetailsViewController.swift; sourceTree = "<group>"; };
 		DDE958A51AEF216F008F60EE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DDE958B21AEF4D99008F60EE /* DishDrinkItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishDrinkItem.swift; sourceTree = SOURCE_ROOT; };
 		DDF851DB1ADF746200FB6506 /* EventSpecialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSpecialViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 		DDACE2081AD0A02000C65558 = {
 			isa = PBXGroup;
 			children = (
+				DDCB78971AF5B0A4004155C2 /* LocationManager.swift */,
 				DD0ABE271AE3452A00FEBBFA /* CoreData.framework */,
 				DDACE2131AD0A02000C65558 /* NoshNosh */,
 				DDACE2291AD0A02000C65558 /* NoshNoshTests */,
@@ -250,6 +257,8 @@
 				DDACE2181AD0A02000C65558 /* LandingPageViewController.swift */,
 				DD6BFBB11ADE3642000D0D1A /* RestaurantViewController.swift */,
 				DDF851DB1ADF746200FB6506 /* EventSpecialViewController.swift */,
+				DDD9037A1AF1DC600043D6CD /* SurpriseMeDetailsViewController.swift */,
+				DDCB78931AF5A45A004155C2 /* MapViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -412,11 +421,14 @@
 				DD4AE9B91AE85C1900CEEF43 /* MoreEventsTableCell.swift in Sources */,
 				DDACE23B1AD1102E00C65558 /* EventsSpecialListMasterViewController.swift in Sources */,
 				DD0ABE2D1AE348E400FEBBFA /* RestaurantItem.swift in Sources */,
+				DDCB78981AF5B0A4004155C2 /* LocationManager.swift in Sources */,
 				DDF851DC1ADF746200FB6506 /* EventSpecialViewController.swift in Sources */,
+				DDCB78941AF5A45A004155C2 /* MapViewController.swift in Sources */,
 				DD72F4851AD6465C00E8C7FE /* NavigationController.swift in Sources */,
 				DD62107E1AD577CB005F9629 /* Restaurant.swift in Sources */,
 				DDACE2171AD0A02000C65558 /* AppDelegate.swift in Sources */,
 				DDACE2371AD0A4B900C65558 /* RestaurantListMasterViewController.swift in Sources */,
+				DDD9037B1AF1DC600043D6CD /* SurpriseMeDetailsViewController.swift in Sources */,
 				DD6BFBB21ADE3642000D0D1A /* RestaurantViewController.swift in Sources */,
 				DDE958A61AEF216F008F60EE /* Event.swift in Sources */,
 				DD50A2061AE4791300DBA06A /* PKHUDContentView.swift in Sources */,
